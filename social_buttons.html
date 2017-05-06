@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://use.fontawesome.com/064092f229.js"></script>
+<style>
+#social-links-container{
+	line-height: 1.89rem;
+	max-width: 100%;
+	display: table;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+.social-link-icon {
+	color: rgb(136, 136, 136);
+    background: rgb(230, 225, 225);
+    border-width: 0px;
+    border-color: #666;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    width: 50px;
+    height: 50px;
+    font-size: 33px;
+    margin: 2px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    line-height: 0;
+    border-style: solid;
+    box-sizing: content-box;
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    white-space: nowrap;
+}
+.social-link-icon:hover {
+    color: #FFF;
+    background: #ff9800;
+}
+.social-link-icon::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.icon-content {
+	display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+/*****************************************************/
+// Fill the following by adding the url inside the "" 
+/*****************************************************/
+// Facebook 
+var link_facebook 	= "#";
+// Twitter
+var link_twitter 	= "#";
+// Google
+var link_google 	= "#";
+// LinkedIn
+var link_linkedin 	= "#";
+// Instagram
+var link_instagram 	= "#";
+// Pinterest
+var link_pinterest 	= "#";
+// Youtube
+var link_youtube 	= "#";
+// Github
+var link_github 	= "#";
+
+/*****************************************************/
+// Coding section
+/*****************************************************/
+// Create an list and add the above links
+var link_list = [
+{id:'fb', desc:'Facebook', 	link:link_facebook,		icon_class:'fa-facebook'},
+{id:'tw', desc:'Twitter', 	link:link_twitter,		icon_class:'fa-twitter'},
+{id:'gp', desc:'Google', 	link:link_google,		icon_class:'fa-google-plus'},
+{id:'li', desc:'LinkedIn', 	link:link_linkedin,		icon_class:'fa-linkedin'},
+{id:'in', desc:'Instagram', link:link_instagram,	icon_class:'fa-instagram'},
+{id:'pi', desc:'Pinterest', link:link_pinterest,	icon_class:'fa-pinterest'},
+{id:'yt', desc:'Youtube', 	link:link_youtube,		icon_class:'fa-youtube-play'},
+{id:'gh', desc:'Github', 	link:link_github,		icon_class:'fa-github'}
+];
+
+var html = '';
+
+// for each link
+for (i = 0; i < link_list.length; i++) {
+	var link_object = link_list[i];
+	// if the user has provided a link
+    if (link_object.link != ''){
+    	// build the html link
+		html += '<a class="social-link-icon"' + ' href="' + link_object.link + '"' + ' rel="nofollow" target="_blank" ' + ' title="' + link_object.desc + '">';
+        html += '<i class="icon-content fa ' + link_object.id + ' ' + link_object.icon_class + '" aria-hidden="true"></i>';
+		html += '</a>';
+	}
+}
+</script>
+
+<div id="social-links-container">
+// Placement for social links
+</div>
+
+<script type="text/javascript">
+// Place inline in the document
+document.getElementById("social-links-container").innerHTML = html;
+</script>
+
+</body>
+</html>
